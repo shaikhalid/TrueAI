@@ -27,7 +27,7 @@ PLAYER_N = 1  # player key in dict
 FOOD_N = 2  # food key in dict
 ENEMY_N = 3  # enemy key in dict
 
-# the dict!
+# the color dict!
 d = {1: (255, 175, 0),
      2: (0, 255, 0),
      3: (0, 0, 255)}
@@ -100,6 +100,14 @@ else:
 # can look up from Q-table with: print(q_table[((-9, -2), (3, 9))]) for example
 
 episode_rewards = []
+mode = input('Select Mode: \n\t 1. Training \n\t 2.Evaluation')
+if(mode == '1'):
+    epsilon = 1
+elif(mode == '2'):
+    epsilon = 0.1
+else:
+    print("You're annoying me - Entering Default Training Mode!")
+  
 
 for episode in range(HM_EPISODES):
     player = Blob()
@@ -125,8 +133,8 @@ for episode in range(HM_EPISODES):
         player.action(action)
 
         #### MAYBE ###
-        #enemy.move()
-        #food.move()
+        enemy.move()
+        food.move()
         ##############
 
         if player.x == enemy.x and player.y == enemy.y:
