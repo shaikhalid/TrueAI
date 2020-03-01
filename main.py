@@ -7,6 +7,7 @@ from matplotlib import style
 import time
 from env.blob import Blob
 style.use("ggplot")
+import torch
 
 SIZE = 10
 
@@ -30,7 +31,7 @@ ENEMY_N = 3  # enemy key in dict
 # the color dict!
 d = {1: (255, 175, 0),
      2: (0, 255, 0),
-     3: (0, 0, 255)}
+     3: (0, 0, 255)  }
 
 
 
