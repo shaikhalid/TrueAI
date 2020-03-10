@@ -1,4 +1,4 @@
-#Ye bhi uthaya hai refrence ke liye
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -12,6 +12,8 @@ class DQN(nn.Module):
 
     def __init__(self, h, w, outputs):
         super(DQN, self).__init__()
+        # torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True,
+        #                 padding_mode='zeros')
         self.conv1 = nn.Conv2d(3, 16, kernel_size=5, stride=2)
         self.bn1 = nn.BatchNorm2d(16)
         self.conv2 = nn.Conv2d(16, 32, kernel_size=5, stride=2)
